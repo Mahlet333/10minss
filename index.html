@@ -1,56 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
+<!--
+  index.html
+  Main HTML file for the "Ten Minutes - Living Comic" interactive web app.
+  This file defines the structure of the app, including navigation, main content, modals, and overlays.
+  Each section is commented for clarity and maintainability.
+-->
+
+<!DOCTYPE html> <!-- Declares the document type and version (HTML5) -->
+<html lang="en"> <!-- Root element with language attribute for accessibility and SEO -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ten Minutes - Living Comic (Fixed)</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8"> <!-- Character encoding for proper text rendering -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design for all devices -->
+    <title>Ten Minutes - Living Comic (Fixed)</title> <!-- Page title shown in browser tab -->
+    <link rel="stylesheet" href="style.css"> <!-- Link to main stylesheet -->
 </head>
 <body>
-    <!-- Loading Screen -->
+    <!-- Loading Screen: Shown while assets/scripts are loading -->
     <div class="comic-loading" id="loading">
-        <div class="loading-text">Loading Ten Minutes...</div>
-        <div class="loading-comic"></div>
+        <div class="loading-text">Loading Ten Minutes...</div> <!-- Loading message -->
+        <div class="loading-comic"></div> <!-- Animated loading graphic (styled in CSS) -->
     </div>
 
-    <!-- Comic Navigation Bar -->
+    <!-- Navigation Bar: Fixed at the top, provides site navigation -->
     <nav class="comic-navbar" id="navbar">
-        <a href="#" class="nav-logo" id="navLogo">TEN MINUTES</a>
+        <a href="#" class="nav-logo" id="navLogo">TEN MINUTES</a> <!-- Logo link (returns to home) -->
         
-        <div class="nav-links" id="navLinks">
-            <div class="sidebar-top-filler"></div>
-            <a href="#" class="nav-link" id="navHome">HOME</a>
-            <a href="#" class="nav-link" id="navComic">COMIC</a>
-            <a href="#" class="nav-link" id="navTeam">TEAM</a>
-            <a href="#" class="nav-link" id="navAbout">ABOUT</a>
+        <div class="nav-links" id="navLinks"> <!-- Navigation links container -->
+            <div class="sidebar-top-filler"></div> <!-- Filler for sidebar spacing -->
+            <a href="#" class="nav-link" id="navHome">HOME</a> <!-- Home page link -->
+            <a href="#" class="nav-link" id="navComic">COMIC</a> <!-- Comic page link -->
+            <a href="#" class="nav-link" id="navTeam">TEAM</a> <!-- Team page link -->
+            <a href="#" class="nav-link" id="navAbout">ABOUT</a> <!-- About modal link -->
         </div>
 
-        <div class="nav-burger" id="navBurger">
+        <div class="nav-burger" id="navBurger"> <!-- Hamburger menu for mobile navigation -->
             <span></span>
             <span></span>
             <span></span>
         </div>
     </nav>
 
-    <!-- Main Comic World -->
+    <!-- Main Comic World: Contains all main app content -->
     <div class="comic-world" id="comicWorld">
         
-        <!-- Timer -->
+        <!-- Timer: Shows countdown during comic play -->
         <div class="comic-timer" id="timer">10:00</div>
 
-        <!-- HOME PAGE -->
+        <!-- HOME PAGE: Shown on initial load -->
         <div class="home-page active" id="homePage">
             <div class="home-content">
                 <div class="title-section">
-                    <h1 class="main-title">TEN MINUTES</h1>
-                    <p class="subtitle">An Interactive Photo Story About Time, Choices, and Student Life</p>
+                    <h1 class="main-title">TEN MINUTES</h1> <!-- Main title -->
+                    <p class="subtitle">An Interactive Photo Story About Time, Choices, and Student Life</p> <!-- Subtitle -->
                 </div>
 
-                <div class="home-layout-container">
-                    <div class="left-section">
+                <div class="home-layout-container"> <!-- Layout for clock and description -->
+                    <div class="left-section"> <!-- Left: Interactive clock -->
                         <div class="interactive-clock" id="interactiveClock">
-                            <div class="clock-face">
-                                <div class="clock-numbers">
+                            <div class="clock-face"> <!-- Clock face graphic -->
+                                <div class="clock-numbers"> <!-- Clock numbers (1-12) -->
                                     <div class="number">12</div>
                                     <div class="number">1</div>
                                     <div class="number">2</div>
@@ -64,15 +71,15 @@
                                     <div class="number">10</div>
                                     <div class="number">11</div>
                                 </div>
-                                <div class="clock-hand hour-hand"></div>
-                                <div class="clock-hand minute-hand"></div>
-                                <div class="clock-center"></div>
+                                <div class="clock-hand hour-hand"></div> <!-- Hour hand -->
+                                <div class="clock-hand minute-hand"></div> <!-- Minute hand -->
+                                <div class="clock-center"></div> <!-- Center dot -->
                             </div>
-                            <p class="clock-text">Click the clock to start your ten-minute journey!</p>
+                            <p class="clock-text">Click the clock to start your ten-minute journey!</p> <!-- Instruction -->
                         </div>
                     </div>
 
-                    <div class="home-description">
+                    <div class="home-description"> <!-- Right: Description text -->
                         <p>Every student knows the impossible mathematics of time management. 
                         You have ten minutes between classes and a thousand micro-decisions to make. 
                         Each choice ripples through your day, shaping not just your schedule, but your story.</p>
@@ -81,78 +88,78 @@
                     </div>
                 </div>
 
-                <button class="start-button" id="startButton">START</button>
+                <button class="start-button" id="startButton">START</button> <!-- Start button -->
             </div>
         </div>
 
-        <!-- COMIC PAGE -->
+        <!-- COMIC PAGE: Main interactive comic experience -->
         <div class="comic-page" id="comicPage">
-            <!-- Comic Slider -->
+            <!-- Comic Slider: Contains all comic slides -->
             <div class="comic-slider" id="comicSlider">
                 <div class="slider-track" id="sliderTrack">
-                    <!-- Slides will be dynamically generated here -->
+                    <!-- Slides will be dynamically generated here by JS -->
                 </div>
             </div>
             
-            <!-- Slider Navigation - MOVED INSIDE COMIC PAGE -->
+            <!-- Slider Navigation: Previous/Next arrows -->
             <div class="slider-nav prev" id="prevBtn">‹</div>
             <div class="slider-nav next" id="nextBtn">›</div>
 
-            <!-- Slider Dots - MOVED INSIDE COMIC PAGE -->
+            <!-- Slider Dots: Progress indicators -->
             <div class="slider-dots" id="sliderDots">
-                <!-- Dots will be dynamically generated here -->
+                <!-- Dots will be dynamically generated here by JS -->
             </div>
         </div>
 
-        <!-- COMIC CONTROLS -->
+        <!-- COMIC CONTROLS: Restart button, shown during comic play -->
         <div class="comic-controls">
             <button class="comic-button" id="restartBtn">RESTART</button>
         </div>
     </div>
 
-    <!-- TEAM PAGE - MOVED OUTSIDE COMIC PAGE -->
+    <!-- TEAM PAGE: Shows team members, outside main comic world for layout -->
     <div class="team-page" id="teamPage">
         <div class="team-content">
-            <h2 class="team-title">Meet the Team</h2>
-            <p class="team-subtitle">These are the faces behind this project.</p>
+            <h2 class="team-title">Meet the Team</h2> <!-- Team section title -->
+            <p class="team-subtitle">These are the faces behind this project.</p> <!-- Team section subtitle -->
             <div class="team-members-container">
-                <!-- Team members will be added here -->
+                <!-- Team members will be added here by JS -->
             </div>
         </div>
     </div>
 
-    <!-- Fullscreen Button (Moved outside comic-controls) -->
+    <!-- Fullscreen Button: Toggles fullscreen mode for immersive experience -->
     <button class="comic-button fullscreen-button" id="fullscreenBtn">⤢</button>
 
-    <!-- Story Modal -->
+    <!-- Story Modal: Used for About, panel details, and conclusion -->
     <div class="story-modal" id="storyModal">
         <div class="modal-content">
-            <button class="modal-close" id="modalClose">×</button>
+            <button class="modal-close" id="modalClose">×</button> <!-- Close modal button -->
             <div id="modalText">
-                <!-- Dynamic content here -->
+                <!-- Dynamic content here (About, panel details, etc.) -->
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js"></script> <!-- Main JavaScript file -->
     
-    <!-- Added Overlay -->
+    <!-- Overlay: Used for mobile sidebar and modal background dimming -->
     <div class="overlay" id="overlay"></div>
-    <!--͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟-->
-<!-- 1) "Try Again?" STYLED MODAL (drop this in index.html) -->
-<!--͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟͟-->
-<div id="endModal" class="story-modal">
-  <div class="modal-content">
-    <!-- Heading (you can adjust the text or font‐size if desired) -->
-    <h3>Experience a different path through these ten minutes?</h3>
-
-    <!-- Buttons wrapped in a flex container -->
-    <div class="modal-buttons">
-      <button id="endModalYes" class="modal-button">Yes</button>
-      <button id="endModalNo"  class="modal-button">No</button>
+    
+    <!-- "Try Again?" Modal: End-of-game prompt for replay -->
+    <!--
+      This modal is shown when the comic ends, asking the user if they want to try a different path.
+      Buttons are handled by JS for replay logic.
+    -->
+    <div id="endModal" class="story-modal">
+      <div class="modal-content">
+        <h3>Experience a different path through these ten minutes?</h3>
+        <div class="modal-buttons">
+          <button id="endModalYes" class="modal-button">Yes</button>
+          <button id="endModalNo"  class="modal-button">No</button>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
 </body>
 </html>

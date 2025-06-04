@@ -1,113 +1,123 @@
-@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Permanent+Marker&family=Kalam:wght@300;400;700&family=Architects+Daughter&display=swap');
+/*
+  style.css
+  Main stylesheet for the "Ten Minutes - Living Comic" interactive web app.
+  This file defines the visual appearance, layout, and responsive behavior of the app.
+  Each section is commented for clarity and maintainability.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Permanent+Marker&family=Kalam:wght@300;400;700&family=Architects+Daughter&display=swap'); /* Import custom fonts for unique comic style */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* Remove default margin for all elements */
+    padding: 0; /* Remove default padding for all elements */
+    box-sizing: border-box; /* Use border-box for predictable sizing */
 }
 
 body {
-    background: #1a1a1a;
-    font-family: 'Kalam', cursive;
-    overflow: hidden;
-    cursor: crosshair;
+    background: #1a1a1a; /* Dark background for comic atmosphere */
+    font-family: 'Kalam', cursive; /* Main font for body text */
+    overflow: hidden; /* Prevent scrollbars except for custom scroll areas */
+    cursor: crosshair; /* Fun cursor for interactive feel */
 }
 
-/* COMIC NAVIGATION BAR */
+/* =====================
+   COMIC NAVIGATION BAR
+   ===================== */
 .comic-navbar {
-    position: fixed;
+    position: fixed; /* Always visible at the top */
     top: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(135deg, #ff6b35, #ff9800);
-    border-bottom: 5px solid #000;
-    padding: 15px 30px;
-    z-index: 2500;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transform: translateY(-100%);
-    animation: slideDownNav 1s ease 1.5s forwards;
-    height: 80px; /* Fixed height for calculations */
-    
+    background: linear-gradient(135deg, #ff6b35, #ff9800); /* Vibrant orange gradient */
+    border-bottom: 5px solid #000; /* Bold comic-style border */
+    padding: 15px 30px; /* Space around nav content */
+    z-index: 2500; /* Above all other content */
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space out logo and links */
+    align-items: center; /* Vertically center content */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    transform: translateY(-100%); /* Start hidden for animation */
+    animation: slideDownNav 1s ease 1.5s forwards; /* Slide in on load */
+    height: 80px; /* Fixed height for layout calculations */
 }
 
 @keyframes slideDownNav {
-    from { transform: translateY(-100%); }
-    to { transform: translateY(0); }
+    from { transform: translateY(-100%); } /* Start above viewport */
+    to { transform: translateY(0); }       /* End at top */
 }
 
 .nav-logo {
-    font-family: 'Permanent Marker', cursive;
-    font-size: 1.8rem;
-    color: #fff;
-    text-shadow: 3px 3px 0px #000;
-    text-decoration: none;
-    transform: rotate(-2deg);
-    transition: all 0.3s ease;
+    font-family: 'Permanent Marker', cursive; /* Comic-style font */
+    font-size: 1.8rem; /* Large logo */
+    color: #fff; /* White text */
+    text-shadow: 3px 3px 0px #000; /* Comic-style shadow */
+    text-decoration: none; /* Remove underline */
+    transform: rotate(-2deg); /* Slight tilt for playful look */
+    transition: all 0.3s ease; /* Smooth hover effect */
 }
 
 .nav-logo:hover {
-    transform: rotate(0deg) scale(1.1);
-    text-shadow: 5px 5px 0px #000;
+    transform: rotate(0deg) scale(1.1); /* Straighten and enlarge on hover */
+    text-shadow: 5px 5px 0px #000; /* Stronger shadow */
 }
 
 .nav-links {
-    display: flex;
-    gap: 25px;
-    align-items: center;
+    display: flex; /* Horizontal layout for links */
+    gap: 25px; /* Space between links */
+    align-items: center; /* Vertically center links */
 }
 
 .nav-link {
-    font-family: 'Architects Daughter', cursive;
-    font-size: 1.2rem;
-    color: #fff;
-    text-decoration: none;
-    background: rgba(0, 0, 0, 0.3);
-    padding: 8px 16px;
-    border: 3px solid #000;
-    border-radius: 15px;
-    transform: rotate(1deg);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    font-family: 'Architects Daughter', cursive; /* Handwritten font for links */
+    font-size: 1.2rem; /* Readable size */
+    color: #fff; /* White text */
+    text-decoration: none; /* No underline */
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent background for contrast */
+    padding: 8px 16px; /* Space around text */
+    border: 3px solid #000; /* Comic-style border */
+    border-radius: 15px; /* Rounded corners */
+    transform: rotate(1deg); /* Slight tilt for comic effect */
+    transition: all 0.3s ease; /* Smooth hover effect */
+    position: relative; /* For overlay effects */
+    overflow: hidden; /* Contain hover effects */
 }
 
 .nav-link:hover {
-    transform: rotate(0deg) scale(1.05);
-    background: rgba(0, 0, 0, 0.6);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    transform: rotate(0deg) scale(1.05); /* Straighten and enlarge on hover */
+    background: rgba(0, 0, 0, 0.6); /* Darker background on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Add shadow for pop */
 }
 
 .nav-burger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 4px;
+    display: none; /* Hidden on desktop, shown on mobile via media queries */
+    flex-direction: column; /* Stack bars vertically */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    gap: 4px; /* Space between bars */
 }
 
 .nav-burger span {
-    width: 25px;
-    height: 3px;
-    background: #fff;
-    border: 1px solid #000;
-    transition: all 0.3s ease;
+    width: 25px; /* Bar width */
+    height: 3px; /* Bar height */
+    background: #fff; /* White bars */
+    border: 1px solid #000; /* Comic-style border */
+    transition: all 0.3s ease; /* Smooth animation for menu toggle */
 }
 
-/* COMIC WORLD WITH PROPER CONSTRAINTS */
+/* =====================
+   MAIN COMIC WORLD LAYOUT
+   ===================== */
 .comic-world {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    position: relative; /* For overlays and modals */
     background: 
         radial-gradient(circle at 20% 80%, rgba(255, 193, 7, 0.15) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(255, 87, 34, 0.15) 0%, transparent 50%),
-        linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-    overflow-y: auto;
+        linear-gradient(135deg, #2c3e50 0%, #34495e 100%); /* Layered gradients for depth */
+    overflow-y: auto; /* Allow vertical scrolling for content */
     overflow-x: hidden; /* Hide horizontal overflow */
     /* Account for navbar and other UI elements */
-    padding-top: 80px;
+    padding-top: 80px; /* Space for navbar */
     padding-bottom: 100px; /* Space for controls and dots */
     padding-left: 80px;   /* Space for navigation arrows */
     padding-right: 80px;
@@ -117,10 +127,12 @@ body {
     transition: padding-left 0.3s ease;
 }
 
-/* HOME PAGE STYLES */
+/* =====================
+   HOME PAGE STYLES
+   ===================== */
 .home-page {
-    position: absolute;
-    top: 50px;        /* Increased from 80px to 100px for extra breathing room */
+    position: absolute; /* Overlay on top of comic world */
+    top: 50px;        /* Offset from top for navbar */
     left: 0;
     width: 100%;
     height: calc(100% - 100px); /* Adjusted to match new top offset */
@@ -128,11 +140,11 @@ body {
     align-items: flex-start;      /* Align at top so content doesn't center vertically */
     justify-content: center;
     padding-top: 20px;            /* Add padding so content isn't flush against the 100px top */
-    opacity: 0;
-    transform: translateY(50px);
+    opacity: 0; /* Hidden by default, shown when active */
+    transform: translateY(50px); /* Slide in animation */
     transition: all 0.8s ease;
-    pointer-events: none;
-    z-index: 100;
+    pointer-events: none; /* Prevent interaction when not active */
+    z-index: 100; /* Above background, below navbar */
 }
 
 /* Ensure the inner container doesn't get clipped when zoomed */
@@ -143,46 +155,46 @@ body {
 
 
 .home-page.active {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: all;
+    opacity: 1; /* Show when active */
+    transform: translateY(0); /* Slide in to position */
+    pointer-events: all; /* Enable interaction */
 }
 
 .home-content {
-    text-align: center;
-    max-width: 1200px;
-    padding: 2rem;
+    text-align: center; /* Center all content */
+    max-width: 1200px; /* Limit width for readability */
+    padding: 2rem; /* Space around content */
 }
 
 .title-section {
-    margin-bottom: 3rem;
+    margin-bottom: 3rem; /* Space below title */
 }
 
 .main-title {
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Permanent Marker', cursive; /* Comic-style font */
     font-size: clamp(2rem, 5vw, 4rem); /* Responsive font size */
-    color: #ff6b35;
+    color: #ff6b35; /* Vibrant orange */
     text-shadow: 
         5px 5px 0px #000,
         -2px -2px 0px #000,
         2px -2px 0px #000,
-        -2px 2px 0px #000;
-    margin-bottom: 1rem;
-    transform: rotate(-2deg);
-    animation: titlePulse 3s ease-in-out infinite;
+        -2px 2px 0px #000; /* Comic-style shadow */
+    margin-bottom: 1rem; /* Space below title */
+    transform: rotate(-2deg); /* Slight tilt for comic effect */
+    animation: titlePulse 3s ease-in-out infinite; /* Subtle pulsing animation */
 }
 
 .subtitle {
-    font-family: 'Architects Daughter', cursive;
+    font-family: 'Architects Daughter', cursive; /* Handwritten font for subtitle */
     font-size: clamp(1rem, 2.5vw, 1.4rem); /* Responsive font size */
-    color: #fff;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 1rem 2rem;
-    border: 3px solid #ff6b35;
-    border-radius: 25px;
-    display: inline-block;
-    transform: rotate(1deg);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    color: #fff; /* White text */
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for contrast */
+    padding: 1rem 2rem; /* Space around text */
+    border: 3px solid #ff6b35; /* Orange border for emphasis */
+    border-radius: 25px; /* Rounded corners */
+    display: inline-block; /* Fit to content */
+    transform: rotate(1deg); /* Slight tilt for comic effect */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Subtle shadow */
 }
 
 .home-layout-container {
