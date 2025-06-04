@@ -178,16 +178,16 @@ For questions, feedback, or collaboration:
 
 ## 👥 Team
 
-### TREM NAZ CELEN
+### Irem Naz Celen
 Creative Director
 
-### ABDELRAMMAN KHATER
+### Abdelrahman Khater
 Lead Developer
 
-### MAHLET ATRSAL
+### Mahlet Atrsaw 
 Developer and Visual Designer
 
-### AHMED BILAL
+### Ahmed Bilal
 UX Researcher
 
 ---
