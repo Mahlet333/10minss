@@ -1197,7 +1197,6 @@ body {
 }
 
 @media (max-width: 768px) {
-    /* ... existing code ... */
     /* Adjust fullscreen button position */
     .fullscreen-button {
         right: 10px;
@@ -1206,11 +1205,25 @@ body {
         height: 35px;
         font-size: 1.2rem;
     }
-    /* ... existing code ... */
+
+    @media (max-width: 768px) {
+  .comic-controls {
+    bottom: 80px;             /* Raise controls above slider dots */
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    justify-content: center;
+    gap: 10px;
+  }
+  .comic-controls .comic-button {
+    flex: 1;
+    margin: 0 5px;
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    padding: clamp(10px, 3vw, 15px) clamp(15px, 4vw, 20px);
+  }}
 }
 
 @media (max-width: 480px) {
-    /* ... existing code ... */
     /* Adjust fullscreen button position and size */
     .fullscreen-button {
         right: 5px;
@@ -1219,7 +1232,6 @@ body {
         height: 30px;
         font-size: 1rem;
     }
-    /* ... existing code ... */
 }
 
 @media (orientation: landscape) and (max-height: 600px) {
@@ -2048,3 +2060,22 @@ body {
     0% { transform: translateX(-100%) rotate(45deg); }
     100% { transform: translateX(100%) rotate(45deg); }
 }
+
+.choice-portal {
+  /* 1) Font size: never smaller than 1rem, never larger than 1.4rem */
+  font-size: clamp(1rem, 3vw, 1.4rem);
+
+  /* 2) Padding: vertical 8px–12px, horizontal 12px–18px */
+  padding: clamp(8px, 2.5vw, 12px) clamp(12px, 3vw, 18px);
+
+  /* 3) Border: thinner edge */
+  border: 2px solid #ff6b35;
+
+  /* 4) Border-radius: still rounded, but scaled down */
+  border-radius: 18px;
+
+  /* 5) Min/Max width: narrower buttons */
+  min-width: clamp(100px, 20vw, 160px);
+  max-width: clamp(140px, 35vw, 220px);
+}
+

@@ -14,7 +14,6 @@ class LivingComic {
     }
 
     defineStoryStructure() {
-        // STORY STRUCTURE BASED ON YOUR ACTUAL IMAGES
         // The story has two key decision points that redirect the narrative flow
         return {
             'start': {
