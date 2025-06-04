@@ -125,9 +125,9 @@ body {
     width: 100%;
     height: calc(100% - 100px); /* Adjusted to match new top offset */
     display: flex;
-    align-items: flex-start;      /* Align at top so content doesn’t center vertically */
+    align-items: flex-start;      /* Align at top so content doesn't center vertically */
     justify-content: center;
-    padding-top: 20px;            /* Add padding so content isn’t flush against the 100px top */
+    padding-top: 20px;            /* Add padding so content isn't flush against the 100px top */
     opacity: 0;
     transform: translateY(50px);
     transition: all 0.8s ease;
@@ -135,7 +135,7 @@ body {
     z-index: 100;
 }
 
-/* Ensure the inner container doesn’t get clipped when zoomed */
+/* Ensure the inner container doesn't get clipped when zoomed */
 .home-page .home-content {
     max-width: 1100px; /* Limit width, but allow some side margins */
     margin-top: 20px;  /* Extra gap below navbar */
@@ -1173,6 +1173,52 @@ body {
     bottom: 20px;
     /* Ensure it doesn't overlap with mobile nav links or controls */
     z-index: 100;
+    /* Add specific styling for the icon */
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+    /* ... existing code ... */
+    /* Adjust fullscreen button position */
+    .fullscreen-button {
+        right: 10px;
+        bottom: 10px;
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+    /* ... existing code ... */
+}
+
+@media (max-width: 480px) {
+    /* ... existing code ... */
+    /* Adjust fullscreen button position and size */
+    .fullscreen-button {
+        right: 5px;
+        bottom: 5px;
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+    /* ... existing code ... */
+}
+
+@media (orientation: landscape) and (max-height: 600px) {
+    /* ... existing code ... */
+    .fullscreen-button {
+        bottom: 5px;
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+    /* ... existing code ... */
 }
 
 /* Update nav-links to be centered after removing items */
@@ -1264,7 +1310,7 @@ body {
         radial-gradient(circle at 80% 80%, rgba(255, 87, 34, 0.1) 0%, transparent 50%),
         #f5f5dc;
     /* ================== UPDATED BORDER ================== */
-    /* Use a thick two-tone border plus an inset “frame” highlight */
+    /* Use a thick two-tone border plus an inset "frame" highlight */
     border: 6px solid #ff6b35;                        /* Outer, bright border */
     box-shadow:
         0 0 0 4px #000,                               /* Inner black framing line */
@@ -1805,7 +1851,7 @@ body {
     width: 100%;
     background: linear-gradient(to bottom, #fff6e0, #fce3b3);
 
-    /* ← NEW: Center the entire grid if there’s “empty space” on a row */
+    /* ← NEW: Center the entire grid if there's "empty space" on a row */
     justify-content: center;
 
     /* ← NEW: Center each card inside its grid cell */
@@ -1858,7 +1904,7 @@ body {
     border-color: #ffc107;
 }
 
-/* Subtle “comic-book” shine effect */
+/* Subtle "comic-book" shine effect */
 .team-member::before {
     content: '';
     position: absolute;
@@ -1985,7 +2031,7 @@ body {
     }
 }
 
-/* “Shine” keyframes (used above) */
+/* "Shine" keyframes (used above) */
 @keyframes shine {
     0% { transform: translateX(-100%) rotate(45deg); }
     100% { transform: translateX(100%) rotate(45deg); }
