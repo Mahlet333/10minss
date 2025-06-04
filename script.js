@@ -961,7 +961,7 @@ displayTeamMembers() {
             },
             {
                 name: 'Mahlet Atrsaw',
-                role: 'Visual Designer',
+                role: 'Developer and Visual Designer',
                 image: 'images/team/mahlet.png',
                 bio: 'Comic artist creating visual magic panel by panel.'
             },
